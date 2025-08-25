@@ -18,8 +18,8 @@ export default function AboutMe() {
         <h1 className="text-5xl text-red-700">About Me</h1>
         <p className="text-sm text-gray-300 mt-32">
           At 12 years old, I wrote my first ever Python script, hoping that soon enough Id be able to hack into my school database to change my grades. While that never came to fruition,
-          my interest in programming stayed and only grew stronger over time. Now at 19, I've spent nearly a decade honing my skills as a full-stack developer, and frankly I enjoy it more than ever.
-          When I'm not coding, you can probably find me working out, editing videos, DJing, or looking for new clothes to buy.
+          my interest in programming stayed and only grew stronger over time. Now at 19, Ive spent nearly a decade honing my skills as a full-stack developer, and frankly I enjoy it more than ever.
+          When Im not coding, you can probably find me working out, editing videos, DJing, or looking for new clothes to buy.
           <br />
           Here are a few statistics I think you should know about me:
         </p>
