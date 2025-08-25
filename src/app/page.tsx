@@ -223,13 +223,13 @@ export default function Home() {
           </p>
           <Dock direction="middle">
             <DockIcon>
-              <Icons.github className="size-6"/>
+              <Icons.github className="size-6" onClick={() => window.open("https://github.com/zachluh", "_blank")}/>
             </DockIcon>
             <DockIcon>
-              <Icons.linkedin className="size-6" />
+              <Icons.linkedin className="size-6" onClick={() => window.open("https://www.linkedin.com/in/zachary-tristan-luheshi-680005315/", "_blank")}/>
             </DockIcon>
             <DockIcon>
-              <Icons.email className="size-6 text-white" />
+              <Icons.email className="size-6 text-white" onClick={() => window.open("mailto:zluheshi@gmail.com", "_blank")}/>
             </DockIcon>
         </Dock>
         </div>          
