@@ -65,7 +65,7 @@ const skills = [
   { name: "React", level: "red" },
   { name: "Next.js", level: "red" },
   { name: "Flask", level: "red" },
-  { name: "SQL / Databases", level: "red-400" },
+  { name: "PostgreSQL / MySQL", level: "red-400" },
   { name: "ORMs (Prisma, Sequelize, SQLAlchemy)", level: "white" },
   { name: "AWS", level: "white" },
   { name: "Tailwind CSS", level: "white" },
@@ -77,10 +77,10 @@ const skills = [
 const projects = [
   { name: "newgen.me", description: "A NextJS website that uses AI to match user submitted clothing brands with a client's fashion taste", href: "projects/newgen-me"},
   { name: "allergen-ai.com", description: "A Flask website that allows users to edit allergens out of a recipe to make it usable to them", href: "projects/allergen-ai"},
-  { name: "CanalNet", description: "A management web app used by Parks Canada", href: "projects/canalnet"},
-  { name: "zaynary", description: "A React website made for couples which allows them to send each other long messages, songs or photos", href: "projects/zaynary"},
-  { name: "Scout", description: "A device made for visually impaired people that aims to help them find products on their shopping list", href: "projects/scout"},
-  { name: "PyLiveTranslator", description: "A live translator that allowed gamers to communicate with teammates that spoke a different language than theirs", href: "projects/pylivetranslator"},
+  { name: "canalNet", description: "A management web app used by Parks Canada", href: "projects/canalnet"},
+  { name: "oursite", description: "A React website made for couples which allows them to send each other long messages, songs or photos", href: "projects/oursite"},
+  { name: "scout", description: "A device made for visually impaired people that aims to help them find products on their shopping list", href: "projects/scout"},
+  { name: "py-live-translator", description: "A live translator that allowed gamers to communicate with teammates that spoke a different language than theirs", href: "projects/pylivetranslator"},
 ]
 
 
@@ -210,11 +210,13 @@ export default function Home() {
           <p className="text-sm text-gray-400 mt-2">
             Welcome to my portfolio!
             <br />
-            Im a <span className="text-white">full-stack developer</span> based in Montreal with a passion for building web applications.
+            Im a <span className="text-white">full-stack developer</span> based in <span className="text-white">Montreal</span> with a passion for building web applications.
             <br />
             My main tools are <span className="text-white">React, Next.js, Node.js, and Python</span>.
             <br />
-            I also like working with databases, I tend to use <span className="text-white">PrismaDB, Sequelize and SQLAlchemy</span>.
+            I also like working with databases like <span className="text-white">PostgreSQL and MySQL</span>, 
+            <br />
+            and ORMs like <span className="text-white">PrismaDB, Sequelize and SQLAlchemy</span>.
           </p>
           <Dock direction="middle">
             <DockIcon>
@@ -247,7 +249,7 @@ export default function Home() {
           <p className="text-sm text-gray-400 mt-2">
             Or e-mail me at <a href="mailto:zluheshi@gmail.com" className="text-white">zluheshi@gmail.com</a>!
           </p>
-          <Input placeholder="E-mail" className="mt-4 min-w-[50%] text-white"/>
+          <Input placeholder="E-mail" className="mt-4 min-w-[50%] text-white" onFocus={() => {setHovering(true)}} onBlur={() => {setHovering(false)}}/>
           <Textarea placeholder="Type your message here..." className="mt-4 min-w-[50%] text-white" onFocus={() => {setHovering(true)}} onBlur={() => {setHovering(false)}}/>
           <Button className="mt-4 bg-black text-white ring-white ring-2 hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300">Submit</Button>
         </div>
@@ -257,6 +259,11 @@ export default function Home() {
           &gt;
         </div>
       )}
+      <div className="absolute bottom-4 left-0 w-full inline-flex justify-center z-10 pointer-events-none">
+        <p className={`${currentSlide === 0 ? "text-red-700" : "text-red-900"} ml-1 mr-1`} onClick = {() => {setCurrentSlide(0)}}>Intro</p>
+        <p className={`${currentSlide === 1 ? "text-red-700" : "text-red-900"} ml-1 mr-1`} onClick = {() => {setCurrentSlide(1)}}>Main</p>
+        <p className={`${currentSlide === 2 ? "text-red-700" : "text-red-900"} ml-1 mr-1`} onClick = {() => {setCurrentSlide(2)}}>Contact</p>
+      </div>
     </div>
     
   );
