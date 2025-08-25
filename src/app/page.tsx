@@ -7,21 +7,16 @@ import React, {useState, useEffect} from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input"; 
 
-import {
-  BellIcon,
-  FileTextIcon,
-  GlobeIcon,
-  InputIcon,
-} from "@radix-ui/react-icons";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { Marquee } from "@/components/magicui/marquee";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { HomeIcon, MailIcon, PencilIcon, Braces, GraduationCap, FolderKanban, User } from "lucide-react";
+import { HomeIcon, MailIcon, PencilIcon, Braces, GraduationCap, FolderKanban, User, FileTextIcon } from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Icons = {
   email: (props: IconProps) => ( <MailIcon {...props} /> ),
+  CV : (props: IconProps) => ( <FileTextIcon {...props} /> ),
   linkedin: (props: IconProps) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <title>LinkedIn</title>
@@ -230,6 +225,9 @@ export default function Home() {
             </DockIcon>
             <DockIcon>
               <Icons.email className="size-6 text-white" onClick={() => window.open("mailto:zluheshi@gmail.com", "_blank")}/>
+            </DockIcon>
+            <DockIcon>
+              <Icons.CV className="size-6 text-white" onClick={() => window.open("/CV.pdf", "_blank")}/>
             </DockIcon>
         </Dock>
         </div>          
