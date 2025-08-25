@@ -4,6 +4,8 @@ import Image from "next/image";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { cn } from "@/lib/utils";
 import React, {useState, useEffect} from "react";
+import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input"; 
 
 import {
   BellIcon,
@@ -13,7 +15,7 @@ import {
 } from "@radix-ui/react-icons";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { Marquee } from "@/components/magicui/marquee";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { HomeIcon, MailIcon, PencilIcon, Braces, GraduationCap, FolderKanban, User } from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
@@ -200,6 +202,7 @@ export default function Home() {
           background: `${`radial-gradient(500px at ${pos.x}px ${pos.y}px, rgba(255,0,0,0.10), transparent 95%)`}`,
         }}
       />
+      
       {currentSlide != 0 && (
       <div className="text-white flex flex-col justify-center items-center hover:bg-red-700 hover:text-black transition-all duration-300" onClick={() => setCurrentSlide(currentSlide-1)}>
         &lt;
@@ -210,7 +213,7 @@ export default function Home() {
           <h1 className="font-bold text-5xl text-white">Zachary Tristan Luheshi</h1>
           <p className="text-lg text-white">Full-stack software engineer</p>
           <p className="text-sm text-gray-400 mt-2">
-            Hi, my name is Zachary Tristan Luheshi.
+            Welcome to my portfolio!
             <br />
             Im a <span className="text-white">full-stack developer</span> based in Montreal with a passion for building web applications.
             <br />
@@ -240,12 +243,22 @@ export default function Home() {
           </BentoGrid>
         </div>
       )}
-
-
-
-      <div className="text-white flex flex-col justify-center items-center hover:bg-red-700 hover:text-black transition-all duration-300" onClick={() => setCurrentSlide(currentSlide+1)}>
-        &gt;
-      </div>
+      {currentSlide === 2 && (
+        <div className="flex flex-col justify-center items-center p-20">
+          <h2 className="font-bold text-3xl text-white">Contact Me</h2>
+          <p className="text-sm text-gray-400 mt-2">
+            Or e-mail me at <a href="mailto:zluheshi@gmail.com" className="text-white">zluheshi@gmail.com</a>!
+          </p>
+          <Input placeholder="E-mail" className="mt-4 min-w-[50%] text-white"/>
+          <Textarea placeholder="Type your message here..." className="mt-4 min-w-[50%] text-white" onFocus={() => {setHovering(true)}} onBlur={() => {setHovering(false)}}/>
+          <Button className="mt-4 bg-black text-white ring-white ring-2 hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300">Submit</Button>
+        </div>
+      )}
+      {currentSlide !== 2 && (
+        <div className="text-white flex flex-col justify-center items-center hover:bg-red-700 hover:text-black transition-all duration-300" onClick={() => setCurrentSlide(currentSlide+1)}>
+          &gt;
+        </div>
+      )}
     </div>
     
   );

@@ -1,10 +1,7 @@
 "use client";
 import { useRouter } from "next/router";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
-import { CheckIcon, ChevronRightIcon } from "lucide-react";
-import { AnimatedSubscribeButton } from "@/components/magicui/animated-subscribe-button";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion"
 
 const jobs = [
   { date: "2025", 
