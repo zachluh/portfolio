@@ -212,7 +212,7 @@ export default function Home() {
           <p className="text-sm text-gray-400 mt-2">
             Hi, my name is Zachary Tristan Luheshi.
             <br />
-            I'm a <span className="text-white">full-stack developer</span> based in Montreal with a passion for building web applications.
+            Im a <span className="text-white">full-stack developer</span> based in Montreal with a passion for building web applications.
             <br />
             My main tools are <span className="text-white">React, Next.js, Node.js, and Python</span>.
             <br />
