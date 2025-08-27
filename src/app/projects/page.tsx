@@ -48,7 +48,7 @@ export default function Projects() {
         <div>
             {!project && (
                 <div className="flex flex-col justify-center items-center min-h-screen">
-                    <h1 className="text-2xl mb-4 text-red-700">This project's page is still being built</h1>
+                    <h1 className="text-2xl mb-4 text-red-700">This projects page is still being built</h1>
                     <br />
                     <p className="text-lg text-white">Check back later for updates!</p>
                     <Button className="mt-40 bg-black ring-1 ring-white hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300" onClick={() => window.location.href = "/"}>
