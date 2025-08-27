@@ -13,7 +13,7 @@ const stats = [
 
 export default function AboutMe() {
   return (
-    <div className="grid grid-cols-2 h-screen">
+    <div className="grid lg:grid-cols-2 sm:grid-cols-1 h-screen">
       <div className="p-32">
         <h1 className="text-5xl text-red-700">About Me</h1>
         <p className="text-sm text-gray-300 mt-32">

@@ -11,6 +11,7 @@ import { Dock, DockIcon } from "@/components/magicui/dock";
 import { Marquee } from "@/components/magicui/marquee";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { HomeIcon, MailIcon, PencilIcon, Braces, GraduationCap, FolderKanban, User, FileTextIcon } from "lucide-react";
+import { form } from "motion/react-m";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -75,12 +76,12 @@ const skills = [
 ];
 
 const projects = [
-  { name: "newgen.me", description: "A NextJS website that uses AI to match user submitted clothing brands with a client's fashion taste", href: "projects/newgen-me"},
-  { name: "allergen-ai.com", description: "A Flask website that allows users to edit allergens out of a recipe to make it usable to them", href: "projects/allergen-ai"},
+  { name: "newgen.me", description: "A NextJS website that uses AI to match user submitted clothing brands with a client's fashion taste", href: "projects"},
+  { name: "allergen-ai.com", description: "A Flask website that allows users to edit allergens out of a recipe to make it usable to them", href: "projects"},
   { name: "canalNet", description: "A management web app used by Parks Canada", href: "projects/canalnet"},
-  { name: "oursite", description: "A React website made for couples which allows them to send each other long messages, songs or photos", href: "projects/oursite"},
-  { name: "scout", description: "A device made for visually impaired people that aims to help them find products on their shopping list", href: "projects/scout"},
-  { name: "py-live-translator", description: "A live translator that allowed gamers to communicate with teammates that spoke a different language than theirs", href: "projects/pylivetranslator"},
+  { name: "oursite", description: "A React website made for couples which allows them to send each other long messages, songs or photos", href: "projects"},
+  { name: "scout", description: "A device made for visually impaired people that aims to help them find products on their shopping list", href: "projects"},
+  { name: "py-live-translator", description: "A live translator that allowed gamers to communicate with teammates that spoke a different language than theirs", href: "projects"},
 ]
 
 
@@ -142,7 +143,7 @@ export default function Home() {
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
                 "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none text-white",
               )}
-              onClick={() => window.open(project.href, "_blank")}
+              onClick={() => window.location.href = project.href}
               onMouseEnter={() => setHovering(true)}
               onMouseLeave={() => setHovering(false)}
             >
@@ -217,6 +218,8 @@ export default function Home() {
             I also like working with databases like <span className="text-white">PostgreSQL and MySQL</span>, 
             <br />
             and ORMs like <span className="text-white">PrismaDB, Sequelize and SQLAlchemy</span>.
+            <br />
+            <span className="text-red-700">Note: This website is still being built, some parts could be missing</span>
           </p>
           <Dock direction="middle">
             <DockIcon>
@@ -249,9 +252,11 @@ export default function Home() {
           <p className="text-sm text-gray-400 mt-2">
             Or e-mail me at <a href="mailto:zluheshi@gmail.com" className="text-white">zluheshi@gmail.com</a>!
           </p>
-          <Input placeholder="E-mail" className="mt-4 min-w-[50%] text-white" onFocus={() => {setHovering(true)}} onBlur={() => {setHovering(false)}}/>
-          <Textarea placeholder="Type your message here..." className="mt-4 min-w-[50%] text-white" onFocus={() => {setHovering(true)}} onBlur={() => {setHovering(false)}}/>
-          <Button className="mt-4 bg-black text-white ring-white ring-2 hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300">Submit</Button>
+          <form className="min-w-[80%]" action="https://formspree.io/f/mblalrea" method="POST">
+            <Input name="email" type="email" placeholder="E-mail" className="mt-4 min-w-[50%] text-white" onFocus={() => {setHovering(true)}} onBlur={() => {setHovering(false)}}/>
+            <Textarea name="message" placeholder="Type your message here..." className="mt-4 min-w-[50%] text-white" onFocus={() => {setHovering(true)}} onBlur={() => {setHovering(false)}}/>
+            <Button className="mt-4 bg-black text-white ring-white ring-2 hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300" type="submit">Submit</Button>
+          </form>
         </div>
       )}
       {currentSlide !== 2 && (
