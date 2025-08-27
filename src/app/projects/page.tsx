@@ -3,8 +3,9 @@ import { useState } from "react"
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { Suspense } from "react";
 
-export default function Projects() {
+function ProjectContent() {
 
 
     const searchParams = useSearchParams();
@@ -63,4 +64,12 @@ export default function Projects() {
 
         </div>
     )
+}
+
+export default function Projects() {
+  return (
+    <Suspense fallback={<div className=" flex flex-col min-h-screen justify-center items-center text-red-700 p-10">Loading project...</div>}>
+      <ProjectContent />
+    </Suspense>
+  );
 }
