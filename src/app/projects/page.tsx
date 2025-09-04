@@ -45,6 +45,23 @@ function ProjectContent() {
                 demo: 'https://www.youtube.com/embed/riRCkvnY1mM?si=y1Nd2jv9GfRCeGGB',
                 links: []
             }
+        ],
+
+        "canalNet": [
+            {
+                title: 'CanalNet',
+                tools: ['Flask', 'SqlAlchemy', 'PostgreSQL', 'Bootstrap', 'Javascript'],
+                description: 'CanalNet is a administrative management tool built for Parks Canada in Ontario. More specifically, it allows managers of different parks to put in orders for resources that their park may require. Additionally, it lets the website administrator manage orders and create summaries of orders that fit certain criteria. This project was built using Flask, with some web components being written in Javascript and beautified with Bootstrap. All data such as orders and account information is stored in a PostgreSQL database managed with SQLAlchemy',
+                demo_type: 'image',
+                demo_desc: '',
+                demo: '/parks canada.png',
+                links: [
+                    {
+                        name: 'GitHub',
+                        url: 'https://github.com/Lambda-Epsilon/CanalNet-proto'
+                    }
+                ]
+            }
         ]
     };
 

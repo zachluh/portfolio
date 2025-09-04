@@ -66,6 +66,7 @@ const skills = [
   { name: "React", level: "red" },
   { name: "Next.js", level: "red" },
   { name: "Flask", level: "red" },
+  { name: "Python", level: "red" },
   { name: "PostgreSQL / MySQL", level: "red-400" },
   { name: "ORMs (Prisma, Sequelize, SQLAlchemy)", level: "white" },
   { name: "AWS", level: "white" },
@@ -78,7 +79,7 @@ const skills = [
 const projects = [
   { name: "newgen.me", description: "A NextJS website that uses AI to match user submitted clothing brands with a client's fashion taste", href: "projects?id=newgen-me"},
   { name: "allergen-ai.com", description: "A Flask website that allows users to edit allergens out of a recipe to make it usable to them", href: "projects?id=allergen-ai"},
-  { name: "canalNet", description: "A management web app used by Parks Canada", href: "projects"},
+  { name: "canalNet", description: "A management web app used by Parks Canada", href: "projects?id=canalNet"},
   { name: "oursite", description: "A React website made for couples which allows them to send each other long messages, songs or photos", href: "projects"},
   { name: "scout", description: "A device made for visually impaired people that aims to help them find products on their shopping list", href: "projects"},
   { name: "py-live-translator", description: "A live translator that allowed gamers to communicate with teammates that spoke a different language than theirs", href: "projects"},
