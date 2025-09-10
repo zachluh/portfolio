@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { Marquee } from "@/components/magicui/marquee";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { HomeIcon, MailIcon, PencilIcon, Braces, GraduationCap, FolderKanban, User, FileTextIcon } from "lucide-react";
+import { HomeIcon, MailIcon, PencilIcon, Braces, GraduationCap, FolderKanban, User, FileTextIcon, ArrowRightIcon, ArrowLeftIcon } from "lucide-react";
 import { form } from "motion/react-m";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
@@ -191,7 +191,7 @@ export default function Home() {
 
     
 
-    <div className={`relative grid min-h-screen ${currentSlide === 0 ? 'grid-cols-[3fr_1fr]' : 'grid-cols-[1fr_2fr_1fr]'}`} onMouseMove={(e) => setTarget({ x: e.clientX, y: e.clientY })}>
+    <div className={`relative grid min-h-screen grid-cols-1 ${currentSlide === 0 ? 'grid-cols-[3fr_1fr]' : 'md:grid-cols-[1fr_2fr_1fr]'}`} onMouseMove={(e) => setTarget({ x: e.clientX, y: e.clientY })}>
       <div
         className="pointer-events-none absolute inset-0 transition-opacity duration-300"
         style={{
@@ -201,7 +201,7 @@ export default function Home() {
       />
       
       {currentSlide != 0 && (
-      <div className="text-white flex flex-col justify-center items-center hover:bg-red-700 hover:text-black transition-all duration-300" onClick={() => setCurrentSlide(currentSlide-1)}>
+      <div className="hidden md:flex text-white flex-col justify-center items-center hover:bg-red-700 hover:text-black transition-all duration-300" onClick={() => setCurrentSlide(currentSlide-1)}>
         &lt;
       </div>
       )}
@@ -236,6 +236,13 @@ export default function Home() {
               <Icons.CV className="size-6 text-white" onClick={() => window.open("/CV.pdf", "_blank")}/>
             </DockIcon>
         </Dock>
+          <Button className="block md:hidden mt-4 bg-black ring-1 ring-white hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300" onClick={() => setCurrentSlide(currentSlide+1)}>
+              <span className="group inline-flex items-center">
+                  Next
+                  <ArrowRightIcon className="mr-3 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  
+              </span>
+          </Button> 
         </div>          
       )}
       {currentSlide === 1 && (
@@ -245,7 +252,25 @@ export default function Home() {
               <BentoCard key={idx} {...card} />
             ))}
           </BentoGrid>
+          <div className="flex md:hidden justify-between w-full mt-4">
+            <Button className="block md:hidden mt-4 bg-black ring-1 ring-white hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300" onClick={() => setCurrentSlide(currentSlide-1)}>
+                <span className="group inline-flex items-center">
+                    <ArrowLeftIcon className="mr-3 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    Back
+                    
+                    
+                </span>
+            </Button> 
+            <Button className="block md:hidden mt-4 bg-black ring-1 ring-white hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300" onClick={() => setCurrentSlide(currentSlide+1)}>
+              <span className="group inline-flex items-center">
+                  Next
+                  <ArrowRightIcon className="mr-3 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  
+              </span>
+          </Button> 
+          </div>
         </div>
+        
       )}
       {currentSlide === 2 && (
         <div className="flex flex-col justify-center items-center p-20">
@@ -258,13 +283,25 @@ export default function Home() {
             <Textarea name="message" placeholder="Type your message here..." className="mt-4 min-w-[50%] text-white" onFocus={() => {setHovering(true)}} onBlur={() => {setHovering(false)}}/>
             <Button className="mt-4 bg-black text-white ring-white ring-2 hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300" type="submit">Submit</Button>
           </form>
+            <div className="flex md:hidden justify-center items-center w-full mt-32">
+            <Button className="block md:hidden mt-4 bg-black ring-1 ring-white hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300" onClick={() => setCurrentSlide(currentSlide-1)}>
+                <span className="group inline-flex items-center">
+                    <ArrowLeftIcon className="mr-3 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    Back
+                    
+                    
+                </span>
+            </Button> 
+
+          </div>
         </div>
       )}
       {currentSlide !== 2 && (
-        <div className="text-white flex flex-col justify-center items-center hover:bg-red-700 hover:text-black transition-all duration-300" onClick={() => setCurrentSlide(currentSlide+1)}>
+        <div className="hidden text-white md:flex flex-col justify-center items-center hover:bg-red-700 hover:text-black transition-all duration-300 " onClick={() => setCurrentSlide(currentSlide+1)}>
           &gt;
         </div>
       )}
+      
       <div className="absolute bottom-4 left-0 w-full inline-flex justify-center z-10 pointer-events-none">
         <p className={`${currentSlide === 0 ? "text-red-700" : "text-red-900"} ml-1 mr-1`} onClick = {() => {setCurrentSlide(0)}}>Intro</p>
         <p className={`${currentSlide === 1 ? "text-red-700" : "text-red-900"} ml-1 mr-1`} onClick = {() => {setCurrentSlide(1)}}>Main</p>

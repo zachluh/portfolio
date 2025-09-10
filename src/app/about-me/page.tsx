@@ -13,7 +13,7 @@ const stats = [
 
 export default function AboutMe() {
   return (
-    <div className="grid lg:grid-cols-2 sm:grid-cols-1 h-screen">
+    <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
       <div className="p-32">
         <h1 className="text-5xl text-red-700">About Me</h1>
         <p className="text-sm text-gray-300 mt-32">
@@ -40,7 +40,7 @@ export default function AboutMe() {
             </span>
         </Button>        
       </div>
-      <div className="flex flex-col justify-center items-center overflow-y-auto">
+      <div className="md:flex flex-col justify-center items-center overflow-y-auto p-2 hidden">
         <img src="/profile-pic.jpeg" className="max-w-[95%] max-h-[95%]" alt="Profile Picture" />
       </div>
     </div>

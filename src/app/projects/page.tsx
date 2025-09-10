@@ -84,10 +84,10 @@ function ProjectContent() {
             )}
 
             {project && projects[project] && (
-                <div className="grid grid-cols-2 h-screen">
+                <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
                     <div className="p-32">
                         <h1 className="text-5xl text-red-700">{projects[project][0].title}</h1>
-                        <Button className="mt-96 bg-black ring-1 ring-white hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300" onClick={() => window.location.href = "/"}>
+                        <Button className="hidden md:block mt-96 bg-black ring-1 ring-white hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300" onClick={() => window.location.href = "/"}>
                             <span className="group inline-flex items-center">
                                 <ArrowLeftIcon className="mr-3 size-4 transition-transform duration-300 group-hover:translate-x-1" />
                                 Back to home
@@ -141,7 +141,15 @@ function ProjectContent() {
                                 <p className="text-lg text-white">{projects[project][0].description}</p>                                
                             </div>
                         </div>
-                    </div>                    
+                    </div>
+
+                    <Button className="block md:hidden ms-32 mt-32 mb-4 bg-black ring-1 ring-white hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300 w-40" onClick={() => window.location.href = "/"}>
+                            <span className="group inline-flex items-center">
+                                <ArrowLeftIcon className="mr-3 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                                Back to home
+                                
+                            </span>
+                    </Button>                    
                 </div>
             )}
 
