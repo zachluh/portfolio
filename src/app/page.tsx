@@ -191,7 +191,7 @@ export default function Home() {
 
     
 
-    <div className={`relative grid min-h-screen grid-cols-1 ${currentSlide === 0 ? 'grid-cols-[3fr_1fr]' : 'md:grid-cols-[1fr_2fr_1fr]'}`} onMouseMove={(e) => setTarget({ x: e.clientX, y: e.clientY })}>
+    <div className={`relative grid min-h-screen grid-cols-1 ${currentSlide === 0 ? 'md:grid-cols-[3fr_1fr]' : 'md:grid-cols-[1fr_2fr_1fr]'}`} onMouseMove={(e) => setTarget({ x: e.clientX, y: e.clientY })}>
       <div
         className="pointer-events-none absolute inset-0 transition-opacity duration-300"
         style={{
@@ -206,7 +206,7 @@ export default function Home() {
       </div>
       )}
       {currentSlide === 0 && (
-        <div className="p-80">
+        <div className="p-45 md:p-80">
           <h1 className="font-bold text-5xl text-white">Zachary Tristan Luheshi</h1>
           <p className="text-lg text-white">Full-stack software engineer</p>
           <p className="text-sm text-gray-400 mt-2">
