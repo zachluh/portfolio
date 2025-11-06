@@ -4,6 +4,13 @@ import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
 
 const jobs = [
+  {
+    date:"2025",
+    title:"Software Engineering Intern",
+    location: "Artur.art",
+    description:"Interned at Artur.art, a web startup working on a platform that aims to connect artists with a wider clientele and vice versa. Created/enhanced 15+ pages, worked on 10+ React components (2 of which created from scratch), got 6 pull requests merged, all in 8 14 hour workweeks",
+    skills: ["NextJs", "React", "TailwindCSS"]
+  },
   { date: "2025", 
     title: "Tutor", 
     location:"Cégep Gerald-Godin", 
@@ -22,15 +29,6 @@ const jobs = [
     description: "E-Corp was a Roblox group focused around the development of the game that shared its name. I created their discord's 'job bot' which saw 1000+ active users aswell as their website, plus some minor contributions to the E-Corp game",
     skills: ["Javascript", "Python", "Discord API", "HTML/CSS"]
   },
-]
-
-const internships = [
-    {
-        date: "2025",
-        title: "Intern at UDEM",
-        location: "UDEM",
-        description: "Shadowed Professor Houari Sahraoui as he gave presentations and completed work around the University"
-    }
 ]
 
 const education = [
@@ -77,16 +75,6 @@ export default function ExperienceEducation() {
                                     <span key={skill} className="mt-2 text-white text-sm px-2 py-1 rounded-full mr-2 mb-2 ring-1 ring-white hover:bg-white hover:text-black transition-all duration-300">{skill}</span>
                                 ))}
                             </div>
-                        </div>
-                    ))}
-                    <div className="mt-12">
-                        <h2 className="text-2xl text-white mb-8">Internships</h2>
-                    </div>
-                    {internships.map((internship) => (
-                        <div key={internship.title} className="mb-4 p-1 hover:ring-1 hover:ring-white transition-all duration-300">
-                            <h2 className="text-lg text-red-700">{internship.title}</h2>
-                            <p className="text-gray-400 text-sm">{internship.date} - {internship.location}</p>
-                            <p className="text-gray-300 text-sm">{internship.description}</p>
                         </div>
                     ))}
                     <div className="mt-12">

@@ -40,9 +40,6 @@ export default function AboutMe() {
             </span>
         </Button>        
       </div>
-      <div className="md:flex flex-col justify-center items-center overflow-y-auto p-2 hidden">
-        <img src="/profile-pic.jpeg" className="max-w-[95%] max-h-[95%]" alt="Profile Picture" />
-      </div>
     </div>
   );
 }
