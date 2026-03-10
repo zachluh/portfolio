@@ -53,8 +53,12 @@ const grades = [
 export default function ExperienceEducation() {
     return (
             <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
-                <div className="p-32">
-                    <h1 className="text-5xl text-red-700">Experience+Education</h1>
+                <div className="p-4 md:p-32">
+                    <h1 className="text-5xl text-red-700">
+                    Experience
+                    <br className="md:hidden" />
+                    +Education
+                    </h1>
                     <Button className="hidden md:block mt-96 bg-black ring-1 ring-white hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300" onClick={() => window.location.href = "/"}>
                         <span className="group inline-flex items-center">
                             <ArrowLeftIcon className="mr-3 size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -63,7 +67,7 @@ export default function ExperienceEducation() {
                         </span>
                     </Button>
                 </div>
-                <div className="p-32 overflow-y-auto [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)]">
+                <div className=" p-4 md:p-32 md:overflow-y-auto md:[mask-image:linear-gradient(to_top,transparent_5%,#000_100%)]">
                     <h1 className="text-2xl text-white mb-8">Work experience</h1>
                     {jobs.map((job) => (
                         <div key={job.title} className="mb-4 p-1 hover:ring-1 hover:ring-white transition-all duration-300">

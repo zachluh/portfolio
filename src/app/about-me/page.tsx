@@ -23,7 +23,7 @@ export default function AboutMe() {
           <br />
           Here are a few statistics I think you should know about me:
         </p>
-        <div className="flex flex-row gap-10 mt-20">
+        <div className="flex flex-col md:flex-row gap-10 mt-20">
           {stats.map((stat) => (
             <div key={stat.label} className="flex flex-col">
               <p className="font-semibold text-gray-300">{stat.label}</p>

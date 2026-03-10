@@ -206,10 +206,10 @@ export default function Home() {
       </div>
       )}
       {currentSlide === 0 && (
-        <div className="p-45 md:p-80">
+        <div className="p-10 md:p-80 ">
           <h1 className="font-bold text-5xl text-white">Zachary Tristan Luheshi</h1>
-          <p className="text-lg text-white">Full-stack software engineer</p>
-          <p className="text-sm text-gray-400 mt-2">
+          <p className="text-lg text-white min-w-[300px]">Full-stack software engineer</p>
+          <p className="text-sm sm:text-xs text-gray-400 mt-2 min-w-[300px]">
             Welcome to my portfolio!
             <br />
             Im a <span className="text-white">full-stack developer</span> based in <span className="text-white">Montreal</span> with a passion for building web applications.

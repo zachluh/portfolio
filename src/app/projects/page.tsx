@@ -85,7 +85,7 @@ function ProjectContent() {
 
             {project && projects[project] && (
                 <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
-                    <div className="p-32">
+                    <div className="p-4 md:p-32">
                         <h1 className="text-5xl text-red-700">{projects[project][0].title}</h1>
                         <Button className="hidden md:block mt-96 bg-black ring-1 ring-white hover:bg-red-700 hover:text-black hover:ring-red-700 transition-all duration-300" onClick={() => window.location.href = "/"}>
                             <span className="group inline-flex items-center">
@@ -95,7 +95,7 @@ function ProjectContent() {
                             </span>
                         </Button>
                     </div>
-                    <div className="p-32 overflow-y-auto [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)]">
+                    <div className="p-4 md:p-32 md:overflow-y-auto md:[mask-image:linear-gradient(to_top,transparent_5%,#000_100%)]">
                         {projects[project][0].demo_type === "image" && (
                             <div>
                                 <img className="mb-4" src={projects[project][0].demo} alt={projects[project][0].title} style={{ objectFit: "cover" }} />
